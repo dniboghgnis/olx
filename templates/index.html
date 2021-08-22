@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>API for apartment interest</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body >
+
+
+ <div class="login">
+	<h1>Predict Interest Level</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    <input type="text" name="bathrooms" placeholder="bathrooms" required="required" />
+    <input type="text" name="bedrooms" placeholder="bedrooms" required="required" />
+		<input type="text" name="latitude" placeholder="latitude" required="required" />
+    <input type="text" name="longitude" placeholder="longitude" required="required" />
+    <input type="text" name="price" placeholder="price" required="required" />
+    <input type="text" name="num_photos" placeholder="num_photos" required="required" />
+    <input type="text" name="num_features" placeholder="num_features" required="required" />
+    <input type="text" name="num_description_words" placeholder="num_description_words" required="required" />
+    <input type="text" name="created_year" placeholder="created_year" required="required" />
+    <input type="text" name="created_month" placeholder="created_month" required="required" />
+    <input type="text" name="created_day" placeholder="created_day" required="required" />
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+
+   <br>
+   <br>
+   {{ interest_level }}
+
+ </div>
+
+
+</body>
+</html>
